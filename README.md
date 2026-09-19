@@ -11,17 +11,15 @@
 
 <br />
 
-Senior frontend engineer at Appswave, building government digital platforms for clients across the UAE and Saudi Arabia. React, Next.js and TypeScript on the front, bilingual Arabic / English interfaces where right-to-left is the default and not an afterthought. Going deeper on .NET so I can own a feature end to end.
+Senior frontend engineer at Appswave, building government digital platforms for clients across the UAE and Saudi Arabia. React, Next.js and TypeScript on the front, bilingual Arabic / English interfaces, left-to-right or right-to-left as the client needs. Going deeper on .NET so I can own a feature end to end.
 
 - **Every build I ship scores 100 / 100 / 100 / 100 in Lighthouse**, mobile and desktop. Nothing is done below that.
 - **I audit the supplied design for WCAG AA contrast before it reaches users**, and each README lists what failed and the smallest colour step that fixed it.
-- **Top-ranked code reviewer on Frontend Mentor**: Mentor of the Week, twice in first place, voted by the developers whose code I reviewed.
+- **Top-ranked code reviewer on Frontend Mentor**: Mentor of the Week five times in first place and once in second, plus Mentor of the Month, voted by the developers whose code I reviewed. Still going.
 
 <br />
 
 ## Featured work
-
-Full-stack builds first. Every link is live.
 
 <table>
   <tr>
@@ -54,12 +52,6 @@ Full-stack builds first. Every link is live.
     <td>TypeScript · Cloudflare Workers · Leaflet</td>
     <td><a href="https://ip-address-tracker.abdelrhman-ahmed8881.workers.dev">Live</a> · <a href="https://github.com/MrBlackvanta/ip-address-tracker">Code</a></td>
   </tr>
-  <tr>
-    <td><b>abdelaal.dev</b></td>
-    <td>The portfolio itself. Static export served by a Worker that also owns the contact endpoint: shared validation, email through Resend, a honeypot that answers 200 so bots never learn they were caught, origin check, body-size cap.</td>
-    <td>Next.js · Cloudflare Workers · Resend</td>
-    <td><a href="https://abdelaal.dev">Live</a> · <a href="https://github.com/MrBlackvanta/minimalist-portfolio-website">Code</a></td>
-  </tr>
 </table>
 
 <p align="right"><a href="https://abdelaal.dev/portfolio">All 38 case studies →</a></p>
@@ -73,6 +65,3 @@ Full-stack builds first. Every link is live.
 </p>
 
 <p align="center"><sub>Also in daily use: Liferay DXP (client extensions, React widgets), OpenNext, EF Core, Render.</sub></p>
-
-<br />
-
