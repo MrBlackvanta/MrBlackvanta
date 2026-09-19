@@ -35,27 +35,21 @@
       .tag:nth-of-type(3) { animation-delay: 8s; }
       .tag:nth-of-type(4) { animation-delay: 12s; }
       .cursor { fill: #5eead4; animation: blink 1.1s steps(1) infinite; }
-      .track { fill: none; stroke: #0cce6b; stroke-opacity: 0.16; stroke-width: 6; }
-      .ring { fill: none; stroke: #0cce6b; stroke-width: 6; stroke-linecap: round; stroke-dasharray: 239; stroke-dashoffset: 239; transform: rotate(-90deg); transform-origin: center; transform-box: fill-box; animation: draw 1.6s cubic-bezier(.2,.7,.2,1) forwards; }
-      .score { font-size: 26px; font-weight: 700; fill: #0cce6b; text-anchor: middle; opacity: 0; animation: fade 0.6s ease 1.2s forwards; }
+      .track { fill: none; stroke-opacity: 0.18; stroke-width: 6; }
+      .ring { fill: none; stroke-width: 6; stroke-linecap: round; stroke-dasharray: 239; }
+      .score { font-size: 26px; font-weight: 700; text-anchor: middle; }
       .label { font-size: 13px; fill: #8b949e; text-anchor: middle; }
-      .g2 .ring { animation-delay: .15s; } .g2 .score { animation-delay: 1.35s; }
-      .g3 .ring { animation-delay: .3s; }  .g3 .score { animation-delay: 1.5s; }
-      .g4 .ring { animation-delay: .45s; } .g4 .score { animation-delay: 1.65s; }
       .glowA { animation: driftA 14s ease-in-out infinite alternate; }
       .glowB { animation: driftB 18s ease-in-out infinite alternate; }
       .sweep { animation: sweep 6s linear infinite; }
       @keyframes rotate { 0% { opacity: 0; transform: translateY(6px); } 4% { opacity: 1; transform: translateY(0); } 22% { opacity: 1; } 26% { opacity: 0; transform: translateY(-6px); } 100% { opacity: 0; } }
       @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
-      @keyframes draw { to { stroke-dashoffset: 0; } }
-      @keyframes fade { to { opacity: 1; } }
       @keyframes driftA { from { transform: translate(0, 0); } to { transform: translate(90px, 40px); } }
       @keyframes driftB { from { transform: translate(0, 0); } to { transform: translate(-80px, -50px); } }
       @keyframes sweep { from { transform: translateX(-600px); } to { transform: translateX(1200px); } }
       @media (prefers-reduced-motion: reduce) {
-        .tag, .cursor, .ring, .score, .glowA, .glowB, .sweep { animation: none; }
+        .tag, .cursor, .glowA, .glowB, .sweep { animation: none; }
         .tag { opacity: 0; } .tag:nth-of-type(1) { opacity: 1; }
-        .ring { stroke-dashoffset: 0; } .score { opacity: 1; }
       }
     </style>
   </defs>
@@ -76,7 +70,7 @@
 
     <g transform="translate(64, 238)">
       <text class="tag" y="0">React · Next.js · TypeScript · Tailwind</text>
-      <text class="tag" y="0">Bilingual Arabic / English, RTL-first interfaces</text>
+      <text class="tag" y="0">Bilingual Arabic / English interfaces, LTR and RTL</text>
       <text class="tag" y="0">Government platforms for clients across the UAE &amp; KSA</text>
       <text class="tag" y="0">.NET APIs behind the frontends I ship</text>
     </g>
@@ -86,25 +80,132 @@
   <g class="sans" transform="translate(760, 0)">
     <text x="192" y="78" class="mono eyebrow" text-anchor="middle">LIGHTHOUSE · EVERY SHIPPED BUILD · MOBILE + DESKTOP</text>
 
-    <g class="g1" transform="translate(48, 156)">
-      <circle class="track" r="38"/><circle class="ring" r="38"/>
-      <text class="score" y="9">100</text>
-      <text class="label" y="70">Performance</text>
-    </g>
-    <g class="g2" transform="translate(144, 156)">
-      <circle class="track" r="38"/><circle class="ring" r="38"/>
-      <text class="score" y="9">100</text>
-      <text class="label" y="70">Accessibility</text>
-    </g>
-    <g class="g3" transform="translate(240, 156)">
-      <circle class="track" r="38"/><circle class="ring" r="38"/>
-      <text class="score" y="9">100</text>
-      <text class="label" y="70">Best Practices</text>
-    </g>
-    <g class="g4" transform="translate(336, 156)">
-      <circle class="track" r="38"/><circle class="ring" r="38"/>
-      <text class="score" y="9">100</text>
-      <text class="label" y="70">SEO</text>
-    </g>
+      <g transform="translate(48, 156)">
+      <circle r="38" fill="#ff4e42" fill-opacity="0.1"><animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/></circle>
+      <circle class="track" r="38" stroke="#ff4e42"><animate attributeName="stroke" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/></circle>
+      <circle class="ring" r="38" stroke="#ff4e42" transform="rotate(-90)" stroke-dashoffset="239"><animate attributeName="stroke-dashoffset" from="239" to="0" begin="0.0s" dur="1.6s" calcMode="spline" keySplines="0.33 1 0.68 1" keyTimes="0;1" fill="freeze"/><animate attributeName="stroke" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/></circle>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">0<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.000s" dur="0.022s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">4<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.022s" dur="0.022s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">8<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.044s" dur="0.023s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">12<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.067s" dur="0.024s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">16<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.090s" dur="0.024s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">20<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.115s" dur="0.025s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">24<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.140s" dur="0.026s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">28<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.166s" dur="0.027s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">32<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.193s" dur="0.028s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">36<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.221s" dur="0.029s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">40<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.251s" dur="0.031s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">44<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.281s" dur="0.032s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">48<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.313s" dur="0.034s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">52<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.347s" dur="0.036s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">56<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.383s" dur="0.038s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">60<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.421s" dur="0.041s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">64<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.462s" dur="0.044s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">68<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.506s" dur="0.048s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">72<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.553s" dur="0.052s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">76<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.606s" dur="0.059s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">80<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.664s" dur="0.067s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">84<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.731s" dur="0.079s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">88<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.811s" dur="0.100s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">92<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.911s" dur="0.142s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">96<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="1.053s" dur="0.547s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">100<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.0s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="1.600s" fill="freeze"/></text>
+      <text class="label" y="70">Performance</text></g>
+
+      <g transform="translate(144, 156)">
+      <circle r="38" fill="#ff4e42" fill-opacity="0.1"><animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/></circle>
+      <circle class="track" r="38" stroke="#ff4e42"><animate attributeName="stroke" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/></circle>
+      <circle class="ring" r="38" stroke="#ff4e42" transform="rotate(-90)" stroke-dashoffset="239"><animate attributeName="stroke-dashoffset" from="239" to="0" begin="0.15s" dur="1.6s" calcMode="spline" keySplines="0.33 1 0.68 1" keyTimes="0;1" fill="freeze"/><animate attributeName="stroke" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/></circle>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">0<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.150s" dur="0.022s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">4<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.172s" dur="0.022s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">8<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.194s" dur="0.023s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">12<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.217s" dur="0.024s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">16<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.240s" dur="0.024s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">20<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.265s" dur="0.025s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">24<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.290s" dur="0.026s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">28<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.316s" dur="0.027s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">32<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.343s" dur="0.028s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">36<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.371s" dur="0.029s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">40<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.401s" dur="0.031s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">44<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.431s" dur="0.032s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">48<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.463s" dur="0.034s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">52<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.497s" dur="0.036s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">56<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.533s" dur="0.038s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">60<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.571s" dur="0.041s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">64<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.612s" dur="0.044s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">68<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.656s" dur="0.048s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">72<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.703s" dur="0.052s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">76<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.756s" dur="0.059s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">80<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.814s" dur="0.067s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">84<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.881s" dur="0.079s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">88<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.961s" dur="0.100s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">92<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="1.061s" dur="0.142s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">96<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="1.203s" dur="0.547s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">100<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.15s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="1.750s" fill="freeze"/></text>
+      <text class="label" y="70">Accessibility</text></g>
+
+      <g transform="translate(240, 156)">
+      <circle r="38" fill="#ff4e42" fill-opacity="0.1"><animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/></circle>
+      <circle class="track" r="38" stroke="#ff4e42"><animate attributeName="stroke" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/></circle>
+      <circle class="ring" r="38" stroke="#ff4e42" transform="rotate(-90)" stroke-dashoffset="239"><animate attributeName="stroke-dashoffset" from="239" to="0" begin="0.3s" dur="1.6s" calcMode="spline" keySplines="0.33 1 0.68 1" keyTimes="0;1" fill="freeze"/><animate attributeName="stroke" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/></circle>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">0<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.300s" dur="0.022s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">4<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.322s" dur="0.022s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">8<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.344s" dur="0.023s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">12<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.367s" dur="0.024s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">16<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.390s" dur="0.024s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">20<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.415s" dur="0.025s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">24<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.440s" dur="0.026s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">28<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.466s" dur="0.027s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">32<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.493s" dur="0.028s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">36<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.521s" dur="0.029s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">40<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.551s" dur="0.031s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">44<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.581s" dur="0.032s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">48<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.613s" dur="0.034s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">52<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.647s" dur="0.036s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">56<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.683s" dur="0.038s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">60<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.721s" dur="0.041s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">64<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.762s" dur="0.044s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">68<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.806s" dur="0.048s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">72<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.853s" dur="0.052s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">76<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.906s" dur="0.059s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">80<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.964s" dur="0.067s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">84<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="1.031s" dur="0.079s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">88<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="1.111s" dur="0.100s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">92<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="1.211s" dur="0.142s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">96<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="1.353s" dur="0.547s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">100<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.3s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="1.900s" fill="freeze"/></text>
+      <text class="label" y="70">Best Practices</text></g>
+
+      <g transform="translate(336, 156)">
+      <circle r="38" fill="#ff4e42" fill-opacity="0.1"><animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/></circle>
+      <circle class="track" r="38" stroke="#ff4e42"><animate attributeName="stroke" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/></circle>
+      <circle class="ring" r="38" stroke="#ff4e42" transform="rotate(-90)" stroke-dashoffset="239"><animate attributeName="stroke-dashoffset" from="239" to="0" begin="0.45s" dur="1.6s" calcMode="spline" keySplines="0.33 1 0.68 1" keyTimes="0;1" fill="freeze"/><animate attributeName="stroke" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/></circle>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">0<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.450s" dur="0.022s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">4<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.472s" dur="0.022s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">8<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.494s" dur="0.023s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">12<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.517s" dur="0.024s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">16<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.540s" dur="0.024s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">20<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.565s" dur="0.025s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">24<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.590s" dur="0.026s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">28<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.616s" dur="0.027s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">32<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.643s" dur="0.028s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">36<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.671s" dur="0.029s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">40<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.701s" dur="0.031s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">44<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.731s" dur="0.032s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">48<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.763s" dur="0.034s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">52<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.797s" dur="0.036s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">56<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.833s" dur="0.038s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">60<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.871s" dur="0.041s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">64<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.912s" dur="0.044s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">68<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="0.956s" dur="0.048s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">72<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="1.003s" dur="0.052s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">76<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="1.056s" dur="0.059s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">80<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="1.114s" dur="0.067s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">84<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="1.181s" dur="0.079s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">88<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="1.261s" dur="0.100s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">92<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="1.361s" dur="0.142s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">96<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="1.503s" dur="0.547s"/></text>
+      <text class="score" y="9" opacity="0" fill="#ff4e42">100<animate attributeName="fill" calcMode="discrete" values="#ff4e42;#ffa400;#0cce6b" keyTimes="0;0.206;0.536" begin="0.45s" dur="1.6s" fill="freeze"/><set attributeName="opacity" to="1" begin="2.050s" fill="freeze"/></text>
+      <text class="label" y="70">SEO</text></g>
   </g>
 </svg>
