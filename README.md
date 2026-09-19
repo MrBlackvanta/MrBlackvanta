@@ -76,16 +76,3 @@ Full-stack builds first. Every link is live.
 
 <br />
 
-<!--
-  Activity cards are hidden on purpose. The public github-readme-stats.vercel.app deployment is PAUSED
-  (returns 503 DEPLOYMENT_PAUSED as of 2026-09-19), which is why the old README showed no stats card.
-  To turn this section on: fork https://github.com/anuraghazra/github-readme-stats, click its "Deploy to Vercel"
-  button (free), then replace YOUR-STATS-INSTANCE below with your Vercel host and remove this comment block.
-
-## Activity
-
-<p align="center">
-  <img src="https://YOUR-STATS-INSTANCE.vercel.app/api?username=mrblackvanta&theme=transparent&hide_border=true&include_all_commits=true&count_private=true&title_color=a78bfa&icon_color=5eead4&text_color=8b949e" alt="GitHub stats" height="165" />
-  <img src="https://YOUR-STATS-INSTANCE.vercel.app/api/top-langs/?username=mrblackvanta&layout=compact&theme=transparent&hide_border=true&langs_count=8&title_color=a78bfa&text_color=8b949e" alt="Top languages" height="165" />
-</p>
--->
