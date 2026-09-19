@@ -5,7 +5,8 @@
 <p align="center">
   <a href="https://abdelaal.dev"><img src="https://img.shields.io/badge/abdelaal.dev-portfolio-0d1117?style=for-the-badge&logo=googlechrome&logoColor=5eead4" alt="Portfolio" /></a>
   <a href="https://abdelaal.dev/portfolio"><img src="https://img.shields.io/badge/38-case_studies-0d1117?style=for-the-badge&logo=readme&logoColor=a78bfa" alt="Case studies" /></a>
-  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-HANDLE"><img src="https://img.shields.io/badge/LinkedIn-connect-0d1117?style=for-the-badge&logo=linkedin&logoColor=7dd3fc" alt="LinkedIn" /></a>
+  <a href="https://www.linkedin.com/in/abdelrhman-vanta/"><img src="https://img.shields.io/badge/LinkedIn-connect-0d1117?style=for-the-badge&logo=linkedin&logoColor=7dd3fc" alt="LinkedIn" /></a>
+  <a href="https://www.upwork.com/freelancers/mrblackvanta"><img src="https://img.shields.io/badge/Upwork-hire_me-0d1117?style=for-the-badge&logo=upwork&logoColor=6fda44" alt="Upwork" /></a>
   <a href="https://abdelaal.dev/contact"><img src="https://img.shields.io/badge/say_hi-contact-0d1117?style=for-the-badge&logo=minutemailer&logoColor=f0f6fc" alt="Contact" /></a>
 </p>
 
